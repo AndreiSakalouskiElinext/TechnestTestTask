@@ -1,0 +1,24 @@
+{
+  "name": "TechnestTestTask",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreiSakalouskiElinext/TechnestTestTask.git"
+  },
+  "keywords": [],
+  "author": "Andrei Sakalouski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreiSakalouskiElinext/TechnestTestTask/issues"
+  },
+  "homepage": "https://github.com/AndreiSakalouskiElinext/TechnestTestTask#readme",
+  "devDependencies": {
+    "cypress": "^8.3.0",
+    "typescript": "^4.3.5"
+  }
+}
