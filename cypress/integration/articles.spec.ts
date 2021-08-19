@@ -1,3 +1,5 @@
+import {deleteAllArticlesWithApi} from "../support/commands";
+
 describe('Creating articles feature', () => {
     beforeEach('Log in to the application', () => {
         cy.loginWithApi();
@@ -15,5 +17,6 @@ describe('Creating articles feature', () => {
     })
 
     after('Deletes all the articles', () => {
+        cy.deleteAllArticlesWithApi();
     })
 })
