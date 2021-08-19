@@ -39,12 +39,11 @@ export function loginWithApi() {
 
 export function createTestUser() {
     cy.fixture('credentials').then((credentials) => {
-            cy.request('POST', 'http://localhost:3333/api/users', credentials)
-                .then(response => {
-                    expect(response.body.statusCode).to.equal(200);
-                })
-        }
-    )
+        cy.request('POST', 'http://localhost:3333/api/users', credentials)
+            .then(response => {
+                expect(response.body.statusCode).to.equal(200);
+            });
+    });
 }
 
 export function createArticleWithApi(article: Cypress.Article) {
