@@ -8,6 +8,9 @@ describe('Creating articles feature', () => {
             articlesArrayFromFixtures.forEach(article => {
                 cy.createArticleWithApi(article)
             })
+            cy.getAllArticlesWithApi().then((articlesArrayFromApp) => {
+                expect(articlesArrayFromApp.length).to.equal(articlesArrayFromFixtures.length);
+            });
         });
     })
 

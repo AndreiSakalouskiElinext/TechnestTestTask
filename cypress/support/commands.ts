@@ -10,6 +10,7 @@ declare global {
         interface Chainable {
             loginWithApi: () => void;
             createArticleWithApi: (article: Cypress.Article) => void;
+            getAllArticlesWithApi: () => Promise<Cypress.Article[]>;
         }
     }
 }
@@ -44,5 +45,22 @@ export function createArticleWithApi(article: Cypress.Article) {
     );
 }
 
+// @ts-ignore
+export function getAllArticlesWithApi(): Promise<Cypress.Article[]> {
+    cy.get('@accessToken').then((token) => {
+            cy.request({
+                method: 'GET',
+                url: 'http://localhost:3333/api/articles',
+                headers: {'Authorization': `Bearer ${token}`},
+            }).then((response) => {
+                    expect(response.body.statusCode).to.equal(200);
+                    return response.body.listData;
+                }
+            );
+        }
+    )
+}
+
 Cypress.Commands.add('loginWithApi', loginWithApi)
 Cypress.Commands.add('createArticleWithApi', createArticleWithApi)
+Cypress.Commands.add('getAllArticlesWithApi', getAllArticlesWithApi)
