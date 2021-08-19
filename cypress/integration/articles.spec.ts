@@ -4,6 +4,11 @@ describe('Creating articles feature', () => {
     })
 
     it('Creates articles and verifies their number', () => {
+        cy.fixture('articles').then((articlesArrayFromFixtures) => {
+            articlesArrayFromFixtures.forEach(article => {
+                cy.createArticleWithApi(article)
+            })
+        });
     })
 
     after('Deletes all the articles', () => {

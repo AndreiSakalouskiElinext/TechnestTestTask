@@ -1,0 +1,90 @@
+[
+  {
+    "title": "First article",
+    "description": "No description",
+    "body": "Something really interesting",
+    "tagList": [
+      "Yay"
+    ]
+  },
+  {
+    "title": "Second article",
+    "description": "No description",
+    "body": "Amazing story",
+    "tagList": [
+      "Yay"
+    ]
+  },
+  {
+    "title": "Third article",
+    "description": "No description",
+    "body": "Something fascinating",
+    "tagList": [
+      "Yay"
+    ]
+  },
+  {
+    "title": "Fourth cool",
+    "description": "No description",
+    "body": "Cool story again",
+    "tagList": [
+      "Yay"
+    ]
+  },
+  {
+    "title": "Fifth article",
+    "description": "No description",
+    "body": "Cool story one more time",
+    "tagList": [
+      "Yay"
+    ]
+  },
+  {
+    "title": "Sixth article",
+    "description": "No description",
+    "body": "The last cool story",
+    "tagList": [
+      "Yay"
+    ]
+  },
+  {
+    "title": "Seventh article",
+    "description": "No description",
+    "body": "Not that much cool story",
+    "tagList": [
+      "Yay"
+    ]
+  },
+  {
+    "title": "Eighth article",
+    "description": "No description",
+    "body": "Running out of ideas",
+    "tagList": [
+      "Yay"
+    ]
+  },
+  {
+    "title": "Ninth article",
+    "description": "No description",
+    "body": "Almost done",
+    "tagList": [
+      "Yay"
+    ]
+  },
+  {
+    "title": "Tenth article",
+    "description": "No description",
+    "body": "Just one more",
+    "tagList": [
+      "Yay"
+    ]
+  },
+  {
+    "title": "Eleventh article",
+    "description": "No description",
+    "body": "Finally done",
+    "tagList": [
+      "Yay"
+    ]
+  }
+]
