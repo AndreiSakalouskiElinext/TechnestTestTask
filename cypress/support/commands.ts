@@ -10,6 +10,7 @@ declare global {
 
         interface Chainable {
             loginWithApi: () => void;
+            createTestUser: () => void;
             createArticleWithApi: (article: Cypress.Article) => void;
             getAllArticlesWithApi: () => Promise<Cypress.Article[]>;
             deleteAllArticlesWithApi: () => void;
@@ -23,11 +24,27 @@ export function loginWithApi() {
             method: 'POST',
             url: 'http://localhost:3333/api/users/login',
             body: credentials,
+            failOnStatusCode: false
         }).its('body').then(body => {
+            if (body.statusCode == 404) {
+                cy.createTestUser();
+                cy.loginWithApi();
+                return;
+            }
             expect(body.statusCode).to.equal(200);
             cy.wrap(body.data.token).as('accessToken');
         });
     });
+}
+
+export function createTestUser() {
+    cy.fixture('credentials').then((credentials) => {
+            cy.request('POST', 'http://localhost:3333/api/users', credentials)
+                .then(response => {
+                    expect(response.body.statusCode).to.equal(200);
+                })
+        }
+    )
 }
 
 export function createArticleWithApi(article: Cypress.Article) {
@@ -74,6 +91,7 @@ export function deleteAllArticlesWithApi() {
 }
 
 Cypress.Commands.add('loginWithApi', loginWithApi)
+Cypress.Commands.add('createTestUser', createTestUser)
 Cypress.Commands.add('createArticleWithApi', createArticleWithApi)
 Cypress.Commands.add('getAllArticlesWithApi', getAllArticlesWithApi)
 Cypress.Commands.add('deleteAllArticlesWithApi', deleteAllArticlesWithApi)
