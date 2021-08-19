@@ -7,7 +7,7 @@ describe('Creating articles feature', () => {
 
     it('Creates articles and verifies their number', () => {
         cy.fixture('articles').then((articlesArrayFromFixtures) => {
-            articlesArrayFromFixtures.forEach(article => {
+            articlesArrayFromFixtures.forEach((article) => {
                 cy.createArticleWithApi(article)
             })
             cy.getAllArticlesWithApi().then((articlesArrayFromApp) => {
