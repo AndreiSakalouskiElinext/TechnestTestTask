@@ -1,3 +1,5 @@
+import AUTWindow = Cypress.AUTWindow;
+
 declare global {
     namespace Cypress {
         type Article = {
@@ -33,6 +35,11 @@ export function loginWithApi() {
             }
             expect(body.statusCode).to.equal(200);
             cy.wrap(body.data.token).as('accessToken');
+            cy.visit('/', {
+                onBeforeLoad(window: AUTWindow) {
+                    window.localStorage.setItem('userInfo', JSON.stringify(body.data));
+                }
+            });
         });
     });
 }

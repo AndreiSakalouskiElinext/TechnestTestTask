@@ -4,7 +4,7 @@
     "description": "No description",
     "body": "Something really interesting",
     "tagList": [
-      "Yay"
+      "First", "Second"
     ]
   },
   {
@@ -12,7 +12,7 @@
     "description": "No description",
     "body": "Amazing story",
     "tagList": [
-      "Yay"
+      "Another", "Tag"
     ]
   },
   {

@@ -4,9 +4,10 @@
     "cypress/**/*.ts"
   ],
   "compilerOptions": {
+    "target": "es2016",
     "types": ["cypress", "node"],
     "lib": [
-      "es2015",
+      "es2016",
       "dom"
     ]
   }
